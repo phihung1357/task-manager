@@ -1,42 +1,234 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.page {
+  padding: 48px 64px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  font-size: 72px;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sub {
+  margin-top: 8px;
+  opacity: 0.7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.addRow {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.card {
-  padding: 2em;
+input {
+  width: 320px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  outline: none;
 }
 
-.read-the-docs {
-  color: #888;
+button {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e2e2;
+  background: white;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #cfcfcf;
+}
+
+/* ✅ Task 2: Filter chips */
+.filters {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.chip {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.chip.active {
+  border-color: #111;
+  font-weight: 600;
+}
+
+.list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 520px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.done .title {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.danger {
+  border: 1px solid #f0c0c0;
+}
+
+.error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #f0c0c0;
+  width: 520px;
+}
+
+.hint {
+  margin-top: 12px;
+  opacity: 0.7;
+  width: 520px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.chip {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: #111;
+  font-weight: 600;
+}
+
+.loadingBox {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px dashed #ddd;
+  border-radius: 12px;
+  opacity: 0.8;
+}
+
+.errorBox {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #f0caca;
+  background: #fff1f1;
+  border-radius: 12px;
+}
+
+.errorTitle {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.errorMsg {
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.smallBtn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.badge {
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.toast.success { border-color: #bfe5c8; }
+.toast.error { border-color: #f0c0c0; }
+.toast.info { border-color: #d7d7ff; }
+
+.toastClose {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+.modal {
+  width: 420px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid #eee;
+  padding: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+}
+
+.modalTitle {
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.modalBody {
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
